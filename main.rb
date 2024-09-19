@@ -8,10 +8,10 @@ def caesar_cipher(string, shift_factor, letters)
   result = ""
 
   string.each_char do |char|
-    if letters[char].nil?
+    if letters[char.downcase].nil?
       result += char #just add the space or special character
     else
-      original_value = letters[char] #get the value at the key of the letter
+      original_value = letters[char.downcase] #get the value at the key of the letter
 
       new_value = (original_value + shift_factor) % letters.size #change the value
       #based on the shift factor, wrapping if the result is > 27 using modulo 
